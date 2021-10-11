@@ -1,0 +1,56 @@
+function [ fused_image ] = fusion( A,B )
+%FUSION 此处显示有关此函数的摘要
+%   此处显示详细说明
+mri = A;
+ct = B;
+%---------------------------------calculate the sigma and size of CoF----------------------------------%
+mean_1 = double(mean(mean(mri)));
+median_1 = double(median(median(mri)));
+standard_deviation_1 = double(std2(double(mri)));
+A = sqrt(abs(median_1-mean_1));
+B = sqrt(abs(standard_deviation_1-mean_1));
+sigma_1 = floor((A + B)/2);
+%---------------------------------calculate the sigma and size of CoF----------------------------------%
+mean_2 = double(mean(mean(ct)));
+median_2 = double(median(median(ct)));
+standard_deviation_2 = double(std2(double(ct)));
+A2 = sqrt(abs(median_2-mean_2));
+B2 = sqrt(abs(standard_deviation_2-mean_2));
+sigma_2 = floor((A2 + B2)/2);
+% sigma = (sigma_1+sigma_2)/2;
+%------------------------------------------the process of filter-----------------------------------------%
+[mritext1,mrirres1] = CoF_GF_decomposition(mri,sigma_1);
+% figure,imshow(mri,[]);title('mri source image');
+% figure,imshow(mritext1,[]);title('mri Img\_CoF\_s');
+% figure,imshow(mritext2);title('mri Img\_d\_l');
+% figure,imshow(mrirres2,[]);title('mri Img\_b');
+[l, ~] = lowpass1(double(mrirres1), 0.01, 16);
+% figure,imshow((mritext1),[]);title('cof texture');
+% figure,imshow(l,[]);title('low');
+% figure,imshow(double(mri)-l,[]);title('high');
+% [mritext1,mritext2,mrirres2] = CoF_GF_decomposition(mri,sigma_1);
+%------------------------------------------the process of filter-----------------------------------------%
+[cttext1,ctrres1] = CoF_GF_decomposition(ct,sigma_2/10);
+[ll, ~] = lowpass1(double(ctrres1), 0.01, 16);
+% figure,imshow((cttext1),[]);title('cof texture');
+% figure,imshow(ll,[]);title('low');
+% figure,imshow(double(ct)-ll,[]);title('high');
+% figure,imshow(ct,[]);title('ct source image');
+% figure,imshow(cttext1,[]);title('ct Img\_CoF\_s');
+% figure,imshow(cttext2,[]);title('ct Img\_d\_l');
+% figure,imshow(ctrres2,[]);title('ct Img\_b');
+%------------------------------------------the process of fusion-----------------------------------------%
+Img_d_sf = texturel(double(ct)-ll,double(mri)-l);
+% figure,imshow(Img_d_lf,[]);title('fused Img\_l');
+% mrid = uint8(double(mri)-l);
+% ctd = uint8(double(ct)-ll);
+% Img_d_sf = textures(ctd,mrid,sigma);
+figure,imshow(Img_d_sf,[]);title('fused Img\_s');
+Img_b_f = base(l,ll);
+figure,imshow(Img_b_f,[]);title('fused Img\_b');
+fused_image =Img_d_sf+double(Img_b_f);
+figure,imshow(uint8(fused_image));title('fused Img');
+
+
+end
+
