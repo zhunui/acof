@@ -14,8 +14,8 @@ Please refer to the above paper if you use this code. Thank you.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The demo files are:
-Script_gray.m for the fusion of two gray-scale images
-Script_color.m for the fusion of one gray-scale (anatomical) image and one color (functional) image. 
+rungray.m for the fusion of two gray-scale images
+runcolor.m for the fusion of one gray-scale (anatomical) image and one color (functional) image. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
