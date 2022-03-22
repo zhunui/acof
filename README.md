@@ -1,22 +1,28 @@
 # acof
-Multimodal medical image fusion using adaptive co-occurrence filter-based decomposition optimization model
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-@article{zhu2022multimodal,
+This package contains the MATLAB code which is associated with the following paper:
 
-  title={Multimodal medical image fusion using adaptive co-occurrence filter-based decomposition optimization model},
-  
-  author={Zhu, Rui and Li, Xiongfei and Huang, Sa and Zhang, Xiaoli},
-  
-  journal={Bioinformatics},
-  
-  volume={38},
-  
-  number={3},
-  
-  pages={818--826},
-  
-  year={2022},
-  
-  publisher={Oxford University Press}
-  
-}
+Zhu R, Li X, Huang S, et al. Multimodal medical image fusion using adaptive co-occurrence filter-based decomposition optimization model[J]. Bioinformatics, 2022, 38(3): 818-826.
+
+Edited by Rui Zhu.   
+
+Usage of this code is free for research purposes only. 
+
+Please refer to the above paper if you use this code. Thank you.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The demo files are:
+Script_gray.m for the fusion of two gray-scale images
+Script_color.m for the fusion of one gray-scale (anatomical) image and one color (functional) image. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Don’t hesitate to contact me if you meet any problems when using this code.
+Author: Rui Zhu                                                          
+Email: zhurui16@mails.jlu.edu.cn
+
+
+
+Last update: 22-Mar-2022
