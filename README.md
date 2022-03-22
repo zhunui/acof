@@ -15,14 +15,15 @@ Please refer to the above paper if you use this code. Thank you.
 
 The demo files are:
 rungray.m for the fusion of two gray-scale images
+
 runcolor.m for the fusion of one gray-scale (anatomical) image and one color (functional) image. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Don’t hesitate to contact me if you meet any problems when using this code.
-Author: Rui Zhu                                                          
+
+Author: Rui Zhu   
+
 Email: zhurui16@mails.jlu.edu.cn
-
-
 
 Last update: 22-Mar-2022
